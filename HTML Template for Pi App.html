@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pi Estimator Web App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+            body {
+                font-family: 'Inter', sans-serif;
+            }
+        </style>
+    </head>
+    <body class="bg-gray-100 dark:bg-gray-900 flex items-center justify-center min-h-screen p-4">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+       <div class="bg-white dark:bg-gray-700 p-8 md:p-12 rounded-2xl shadow-xl w-full max-w-2xl text-center">
+        <h1 class="text-4xl font-extrabold mb-4 text-gray-800 dark:text-white md:text-5xl">Pi Estimator</h1>
+        <p>Estimate the value of pi using the Monte Carlo method. Enter the number of random points to use in the simulation.</p>
+
+        <!---- Form for user input ------>
+        <form method="post" action="/estimate_pi">
+            <label for="num_points">Number of points:</label>
+            <input type="number" id="num_points" name="num_points" required>
+            <button type="submit">Estimate Pi</button>
+        </form>
+       </div>
+    </body>
+</html>
