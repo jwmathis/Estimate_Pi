@@ -26,14 +26,28 @@
         
        <div class="bg-white dark:bg-gray-700 p-8 md:p-12 rounded-2xl shadow-xl w-full max-w-2xl text-center">
         <h1 class="text-4xl font-extrabold mb-4 text-gray-800 dark:text-white md:text-5xl">Pi Estimator</h1>
-        <p>Estimate the value of pi using the Monte Carlo method. Enter the number of random points to use in the simulation.</p>
+        <p class="text-lg text-gray-600 dark:text-gray-400">Estimate the value of pi using the Monte Carlo method. Enter the number of random points to use in the simulation.</p>
 
         <!---- Form for user input ------>
         <form method="post" action="/estimate_pi">
-            <label for="num_points">Number of points:</label>
-            <input type="number" id="num_points" name="num_points" required>
-            <button type="submit">Estimate Pi</button>
+            <div class="mb-4">
+                <label for="num_points" class="block text-gray-700 dark:text-gray-300 font-bold mb-2">Number of points:</label>
+                <input 
+                    type="number" 
+                    id="num_points" 
+                    name="num_points" 
+                    placeholder="e.g. 10000"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                    required>
+            </div>
+            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Estimate Pi</button>
         </form>
+
+        <!--- Display results ------>
+        <div class="mt-8 bg-blue-500 text-white p-4 rounded-lg border border-blue-400 dark:border-blue-600 dark:bg-blue-600 dark:text-white">
+            <h2 class="text-2xl font-extrabold mb-4 text-gray-800 dark:text-white md:text-3xl">Results</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400">The estimated value of pi is: {{ pi }}</p>
+        </div>
        </div>
     </body>
 </html>
