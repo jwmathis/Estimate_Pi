@@ -1,6 +1,11 @@
+from flask import Flask, render_template, request
 import random
 import math
 
+# Initialize Flask Application
+app = Flask(__name__)
+
+"""Core Functions"""
 def count_decimal_places(number):
     """
     Counts the number of decimal places in a number.
@@ -37,6 +42,8 @@ def estimate_pi(num_points):
     pi = (4 * pointsInCircle) / totalPoints
     return pi
 
+# Define the route for the home page
+@app.route('/', methods=['GET', 'POST'])
 
 def main():
     """
