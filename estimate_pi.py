@@ -74,5 +74,9 @@ def index():
     # Render HTML template using results
     return render_template('index.html', pi_estimate=pi_estimate, num_points=num_points)
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
