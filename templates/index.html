@@ -17,6 +17,7 @@
         </style>
     </head>
     <body class="bg-gray-100 dark:bg-gray-900 flex items-center justify-center min-h-screen p-4">
+    <div>
        <div class="bg-white dark:bg-gray-700 p-8 md:p-12 rounded-2xl shadow-xl w-full max-w-2xl text-center">
         <h1 class="text-4xl font-extrabold mb-4 text-gray-800 dark:text-white md:text-5xl">Pi Estimator</h1>
         <p class="text-lg text-gray-600 dark:text-gray-400">Estimate the value of pi using the Monte Carlo method. Enter the number of random points to use in the simulation.</p>
@@ -30,6 +31,7 @@
                     id="num_points" 
                     name="num_points" 
                     placeholder="e.g. 10000"
+                    value="{{ num_points }}"
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
                     required>
             </div>
@@ -42,5 +44,9 @@
             <p class="text-lg text-gray-600 dark:text-gray-800">With {{ num_points }} points, the estimated value of pi is approximately: {{ pi_estimate }}</p>
         </div>
        </div>
+       <div>
+            <p class="text-sm text-gray-800 dark:text-white text-center">Made by John Wesley Mathis</p>
+       </div>
+    </div>
     </body>
 </html>
