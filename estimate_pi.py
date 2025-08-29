@@ -1,47 +1,47 @@
 from flask import Flask, render_template, request
 import random
 import math
+import time
+import numpy as np
 
 # Initialize Flask Application
 app = Flask(__name__)
 
-# Core Functions to estimate Pi
-def count_decimal_places(number):
-    """
-    Counts the number of decimal places in a number.
-    :param number:
-    :return:
-    """
-    s = str(number) # Convert number to a string
-    if '.' in s: # Find the decimal point
-        return len(s.split('.')[-1]) # return the number of digits after decimal point
-    else:
-        return 0
-
-def estimate_pi(num_points):
+def estimate_pi(num_points, decimal_places):
     """
     Estimates the value of Pi using the Monte Carlo method
     Pi is the ratio of the circumference and diameter of the circle.
 
+    :param decimal_places:
     :param num_points:
     :return float: An estimate of the value of Pi:
     """
-    pointsInCircle = 0
-    totalPoints = 0
-    for i in range(0, num_points):
-        # Generate random point
-        x = random.random()
-        y = random.random()
-        totalPoints += 1 # Increment total points
+    # pointsInCircle = 0
+    # totalPoints = 0
+    # for i in range(0, num_points):
+    #     # Generate random point
+    #     x = random.random()
+    #     y = random.random()
+    #     totalPoints += 1 # Increment total points
+    #
+    #     distance = math.sqrt(x*x + y*y) # Calculate distance point is from center of the circle
+    #
+    #     if distance < 1:
+    #         pointsInCircle += 1
 
-        distance = math.sqrt(x*x + y*y) # Calculate distance point is from center of the circle
+    # Generate an array of random points with numpy
+    points = np.random.rand(num_points, 2)
+    # Calculate squared distance of each point from the origin
+    distance_squared = np.sum(points**2, axis=1)
+    # Count number of points that fall within the circle
+    pointsInCircle = np.sum(distance_squared <= 1)
+    # Count total number of points
+    totalPoints = num_points
 
-        if distance < 1:
-            pointsInCircle += 1
-
+    # Calculate estimated value of pi
     pi = (4 * pointsInCircle) / totalPoints
-    formatted_pi = round(pi, 3)
-    return pi
+    formatted_pi = round(pi, decimal_places)
+    return formatted_pi
 
 # Define the route for the home page
 @app.route('/', methods=['GET', 'POST'])
@@ -54,6 +54,8 @@ def index():
 
     pi_estimate = 0
     num_points = 0
+    decimal_places = 0
+    calculation_time = 0
 
     # Check if form was submitted via a POST
     if request.method == 'POST':
@@ -62,17 +64,30 @@ def index():
             num_points_str = request.form['num_points']
             num_points = int(num_points_str)
 
+            # Get number of deicmal places from the HTML form
+            decimal_places_str = request.form['decimal_places']
+            decimal_places = int(decimal_places_str)
+
             # Run simulation and get Pi estimation
             if num_points > 0:
-                pi_estimate = estimate_pi(num_points)
+                # Get start time before calculation
+                start_time = time.time()
+                pi_estimate = estimate_pi(num_points, decimal_places)
+                # Get end time after calculation
+                end_time = time.time()
+
+                # Calculate total time to perform calculation
+                calculation_time = round((end_time - start_time), 3)
 
         except (ValueError, KeyError):
             # Error handling when input is not a valid number
             pi_estimate = "Invalid input. Enter a positive whole number."
             num_points = "N/A"
+            decimal_places = "N/A"
+            calculation_time = "N/A"
 
     # Render HTML template using results
-    return render_template('index.html', pi_estimate=pi_estimate, num_points=num_points)
+    return render_template('index.html', pi_estimate=pi_estimate, num_points=num_points, decimal_places=decimal_places, calculation_time=calculation_time)
 
 @app.route('/about')
 def about():
