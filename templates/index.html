@@ -17,48 +17,50 @@
         </style>
     </head>
     <body class="bg-gray-100 dark:bg-gray-900 flex items-center justify-center min-h-screen p-4">
-    <div>
-       <div class="bg-white dark:bg-gray-700 p-8 md:p-12 rounded-2xl shadow-xl w-full max-w-2xl text-center">
-        <h1 class="text-4xl font-extrabold mb-4 text-gray-800 dark:text-white md:text-5xl">Pi Estimator</h1>
-        <p class="text-lg text-gray-600 dark:text-gray-400">Estimate the value of pi using the Monte Carlo method. Enter the number of random points to use in the simulation.</p>
+        <div>
+            <!-- Title and Explanation Paragraph -->
+            <div class="bg-white dark:bg-gray-700 p-8 md:p-12 rounded-2xl shadow-xl w-full max-w-2xl text-center">
+                <h1 class="text-4xl font-extrabold mb-4 text-gray-800 dark:text-white md:text-5xl">Pi Estimator</h1>
+                <p class="text-lg text-gray-600 dark:text-gray-400">Estimate the value of pi using the Monte Carlo method. Enter the number of random points to use in the simulation.</p>
 
-        <!---- Form for user input ------>
-        <form method="post" action="/">
-            <div class="mb-4">
-                <label for="num_points" class="block text-gray-700 dark:text-gray-300 font-bold mb-2 mt-2">Number of points:</label>
-                <input 
-                    type="number" 
-                    id="num_points" 
-                    name="num_points" 
-                    placeholder="e.g. 10000"
-                    value="{{ num_points }}"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-                    required>
-                <label for="decimal_places" class="block text-gray-700 dark:text-gray-300 font-bold mb-2 mt-2">Number of Decimal Places</label>
-                <input
-                    type="number"
-                    id="decimal_places"
-                    name="decimal_places"
-                    placeholder="e.g. 3"
-                    value="{{ decimal_places }}"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-                    required>
+                <!---- Form for user input ------>
+                <form method="post" action="/">
+                    <div class="mb-4">
+                        <label for="num_points" class="block text-gray-700 dark:text-gray-300 font-bold mb-2 mt-2">Number of points:</label>
+                        <input 
+                            type="number" 
+                            id="num_points" 
+                            name="num_points" 
+                            placeholder="e.g. 10000"
+                            value="{{ num_points }}"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                            required>
+                        <label for="decimal_places" class="block text-gray-700 dark:text-gray-300 font-bold mb-2 mt-2">Number of Decimal Places</label>
+                        <input
+                            type="number"
+                            id="decimal_places"
+                            name="decimal_places"
+                            placeholder="e.g. 3"
+                            value="{{ decimal_places }}"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                            required>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Estimate Pi</button>
+                </form>
+
+                <!--- Display results ------>
+                <div class="mt-8 bg-blue-100 text-white p-4 rounded-lg border border-blue-400 dark:border-blue-600 dark:bg-blue-250 dark:text-blue-800">
+                    <h2 class="text-2xl font-extrabold mb-4 text-blue-800 dark:text-blue-800 md:text-3xl">Results</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-800">With {{ num_points }} points, the estimated value of pi is approximately: {{ pi_estimate }}</p>
+                    <p class="text-lg text-gray-600 dark:text-gray-800">Total time to estimate pi: {{ calculation_time }} seconds</p>
+
+                </div>
+
+                <!-- About page link -->
+                <div class="mt-8 text-center">
+                    <a href="/about" class="text-blue-500 hover:underline">Learn About This App</a>
+                </div>
             </div>
-            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Estimate Pi</button>
-        </form>
-
-        <!--- Display results ------>
-        <div class="mt-8 bg-blue-100 text-white p-4 rounded-lg border border-blue-400 dark:border-blue-600 dark:bg-blue-250 dark:text-blue-800">
-            <h2 class="text-2xl font-extrabold mb-4 text-blue-800 dark:text-blue-800 md:text-3xl">Results</h2>
-            <p class="text-lg text-gray-600 dark:text-gray-800">With {{ num_points }} points, the estimated value of pi is approximately: {{ pi_estimate }}</p>
-            <p class="text-lg text-gray-600 dark:text-gray-800">Total time to estimate pi: {{ calculation_time }} seconds</p>
-
         </div>
-           <div class="mt-8 text-center">
-               <a href="/about" class="text-blue-500 hover:underline">Learn About This App</a>
-           </div>
-       </div>
-
-    </div>
     </body>
 </html>

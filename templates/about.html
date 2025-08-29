@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Pi Estimator Web App</title>
+        <title>Pi Estimator Web App About Page</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
@@ -16,47 +16,58 @@
 
         </style>
     </head>
+    
     <body class="bg-gray-100 dark:bg-gray-900 flex items-center justify-center min-h-screen p-4">
-    <div>
-       <div class="bg-white dark:bg-gray-700 p-8 md:p-12 rounded-2xl shadow-xl w-full max-w-2xl text-center">
-        <h1 class="text-4xl font-extrabold mb-4 text-gray-800 dark:text-white md:text-5xl">About This Webapp</h1>
-        <p class="text-lg text-gray-600 dark:text-gray-400">
-            This web application estimates the value of Pi using the <a href="https://en.wikipedia.org/wiki/Monte_Carlo_method" title="Learn more about the Monte Carlo Method" target="_blank"  class="text-blue-500 hover:underline">Monte Carlo method</a>, a computational algorithm that relies on repeated
-        random sampling to obtain numerical results.</p>
-           <p class="text-lg text-gray-600 dark:text-gray-400 p-8">
-            The core idea is to simulate random points within a square that encloses a circle. The ratio of points falling inside the circle
-           to the total number of points is used to approximate the value of Pi. The more points you use, the more accurate the estimate will be.</p>
-           <p class="text-lg text-gray-600 dark:text-gray-400">
-               Pi is estimated using the ratio
-                    Pi &asymp; 4 &times;
-                <span style="display:inline-block; vertical-align:middle; line-height:1.2;">
-                    <span style="display:block; border-bottom:1px solid gray;">points in circle</span>
-                    total points
-                </span>
-           </p>
+        <div>
+            <!-- Outer box layout -->
+        <div class="bg-white dark:bg-gray-700 p-8 md:p-12 rounded-2xl shadow-xl w-full max-w-2xl text-center">
+                <!-- Main Title -->
+                <h1 class="text-4xl font-extrabold mb-4 text-gray-800 dark:text-white md:text-5xl">About This Webapp</h1>
+
+                <!-- First Paragrah -->
+                <p class="text-lg text-gray-600 dark:text-gray-400">
+                    This web application estimates the value of Pi using the <a href="https://en.wikipedia.org/wiki/Monte_Carlo_method" title="Learn more about the Monte Carlo Method" target="_blank"  class="text-blue-500 hover:underline">Monte Carlo method</a>, a computational algorithm that relies on repeated
+                random sampling to obtain numerical results.
+                </p>
+
+                <!-- Second Paragraph -->
+                <p class="text-lg text-gray-600 dark:text-gray-400 p-8">
+                    The core idea is to simulate random points within a square that encloses a circle. The ratio of points falling inside the circle
+                to the total number of points is used to approximate the value of Pi. The more points you use, the more accurate the estimate will be.
+                </p>
+
+                <!-- Estimation formula -->
+                <p class="text-lg text-gray-600 dark:text-gray-400">
+                    Pi is estimated using the ratio
+                            Pi &asymp; 4 &times;
+                        <span style="display:inline-block; vertical-align:middle; line-height:1.2;">
+                            <span style="display:block; border-bottom:1px solid gray;">points in circle</span>
+                            total points
+                        </span>
+                </p>
 
 
-        <!--- Display How It Works ------>
-        <div class="mt-8 bg-blue-100 text-white p-4 rounded-lg border border-blue-400 dark:border-blue-600 dark:bg-blue-250 dark:text-blue-800">
-            <h2 class="text-2xl font-extrabold mb-4 text-blue-800 dark:text-blue-800 md:text-3xl">How it Works</h2>
-            <ol class="text-lg text-gray-600 dark:text-gray-800 text-left">
-                <li>1. Enter a positive whole number for the number of points. The bigger the number the more accurate the estimation.</li>
-                <li>2. Enter a positive whole number for the number of decimal places to round pi.</li>
-                <li>3. The total time it takes to estimate pi is displayed. The more points that are used, the longer it will take to estimate pi.</li>
-            </ol>
+                <!-- Inner box: How To Use -->
+                <div class="mt-8 bg-blue-100 text-white p-4 rounded-lg border border-blue-400 dark:border-blue-600 dark:bg-blue-250 dark:text-blue-800">
+                    <h2 class="text-2xl font-extrabold mb-4 text-blue-800 dark:text-blue-800 md:text-3xl">How to Use</h2>
+                    <ol class="text-lg text-gray-600 dark:text-gray-800 text-left">
+                        <li>1. Enter a positive whole number for the number of points. The bigger the number the more accurate the estimation.</li>
+                        <li>2. Enter a positive whole number for the number of decimal places to round pi.</li>
+                        <li>3. The total time it takes to estimate pi is displayed. The more points that are used, the longer it will take to estimate pi.</li>
+                    </ol>
+                </div>
+
+                <!-- Created by Box-->
+                <div class="mt-4 text-center text-gray-800 dark:text-white">
+                    <h2 class="text-2xl font-extrabold mb-4 text-blue-800 dark:text-white md:text-3xl">Created By</h2>
+                    <p class="text-sm ">This app was made by John Wesley Mathis</p>
+                </div>
+
+                <!-- Link back to index -->
+                <div class="mt-4 text-center">
+                    <a href="/" class="text-blue-500 hover:underline">Back to App</a>
+                </div>
         </div>
-
-           <!--- Display Created by --->
-           <div class="mt-4 text-center text-gray-800 dark:text-white">
-               <h2 class="text-2xl font-extrabold mb-4 text-blue-800 dark:text-white md:text-3xl">Created By</h2>
-               <p class="text-sm ">This app was made by John Wesley Mathis</p>
-           </div>
-
-           <!--- Link back to index -->
-           <div class="mt-4 text-center">
-               <a href="/" class="text-blue-500 hover:underline">Back to App</a>
-           </div>
-       </div>
-    </div>
+        </div>
     </body>
 </html>
