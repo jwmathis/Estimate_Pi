@@ -22,11 +22,15 @@ To run this applicaiton, you'll need to have Python and the Flask framework inst
    ```
    pip install Flask
    ```
+2. **Install Numpy:** Open your terminal or command prompt and run the following command to install Numpy:
+   ```
+   pip install Numpy
+   ```
 3. **Run the App:** Once Flask is installed, navigate to the project directory and run the main application file(e.g., estimate_pi.py) form your terminal:
    ```
    python estimate_pi.py
    ```
-5. **Access the App:** This terminal will display a local address (usually http://127.0.0.1:5000). Open this address in your web browser to use the application.
+4. **Access the App:** This terminal will display a local address (usually http://127.0.0.1:5000). Open this address in your web browser to use the application.
 
 # Technologies Used
   * **HTML5:** For the front-end structure of the web page
