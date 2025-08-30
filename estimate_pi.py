@@ -16,32 +16,48 @@ def estimate_pi(num_points, decimal_places):
     :param num_points:
     :return float: An estimate of the value of Pi:
     """
-    # pointsInCircle = 0
-    # totalPoints = 0
+    # points_in_circle = 0
+    # total_points = 0
     # for i in range(0, num_points):
     #     # Generate random point
     #     x = random.random()
     #     y = random.random()
-    #     totalPoints += 1 # Increment total points
+    #     total_points += 1 # Increment total points
     #
     #     distance = math.sqrt(x*x + y*y) # Calculate distance point is from center of the circle
     #
     #     if distance < 1:
-    #         pointsInCircle += 1
+    #         points_in_circle += 1
+    points_in_circle = 0
 
-    # Generate an array of random points with numpy
-    points = np.random.rand(num_points, 2)
-    # Calculate squared distance of each point from the origin
-    distance_squared = np.sum(points**2, axis=1)
-    # Count number of points that fall within the circle
-    pointsInCircle = np.sum(distance_squared <= 1)
+    # Chunk size that is a power of 10 to reduce chance of memory allocation errors
+    chunk_size = 1000000
+
+    for _ in range(num_points // chunk_size):
+        # Generate an array of random points with numpy
+        points = np.random.rand(chunk_size, 2)
+        # Calculate squared distance of each point from the origin
+        distance_squared = np.sum(points**2, axis=1)
+        # Count number of points that fall within the circle
+        points_in_circle += np.sum(distance_squared <= 1)
+
+    # Handle remaining points in a final chunk
+    remaining_points = num_points % chunk_size
+    if remaining_points > 0:
+        points = np.random.rand(num_points, 2)
+        distance_squared = np.sum(points ** 2, axis=1)
+        points_in_circle += np.sum(distance_squared <= 1)
+
     # Count total number of points
-    totalPoints = num_points
+    total_points = num_points
 
     # Calculate estimated value of pi
-    pi = (4 * pointsInCircle) / totalPoints
-    formatted_pi = round(pi, decimal_places)
-    return formatted_pi
+    if total_points > 0:
+        pi = (4 * points_in_circle) / total_points
+        formatted_pi = round(pi, decimal_places)
+        return formatted_pi
+    else:
+        return 0
 
 # Define the route for the home page
 @app.route('/', methods=['GET', 'POST'])
