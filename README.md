@@ -6,6 +6,10 @@ The application simulates random points within a square that encloses a perfect 
 
 The formula used for the estimation is:
 
+$$
+\pi \approx 4 \times \frac{\text{points in circle}}{\text{total points}}
+$$
+
 # Features
 * Pi estimation: Calculates an estimate for Pi based on a user-defined number of points.
 * Custom Precision: Allows the user to specify the number of decimal places to round the estimated value.
