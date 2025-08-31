@@ -80,7 +80,7 @@ def index():
             num_points_str = request.form['num_points']
             num_points = int(num_points_str)
 
-            # Get number of deicmal places from the HTML form
+            # Get number of decimal places from the HTML form
             decimal_places_str = request.form['decimal_places']
             decimal_places = int(decimal_places_str)
 

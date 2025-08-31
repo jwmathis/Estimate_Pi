@@ -40,5 +40,9 @@ To run this applicaiton, you'll need to have Python and the Flask framework inst
   * **Flask:** A Python web framework used to serve the web application
 
 # Web App Images
-![Home Page View](images/homepage.png "Home Page")
-![About Page View](images/aboutpage.png "About Page")
+## Light Theme
+![Home Page View](images/lighthomepage.png "Home Page")
+![About Page View](images/lightaboutpage.png "About Page")
+## Dark Theme
+![Home Page View](images/darkhomepage.png "Home Page")
+![About Page View](images/darkaboutpage.png "About Page")
