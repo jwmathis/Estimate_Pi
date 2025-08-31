@@ -37,3 +37,7 @@ To run this applicaiton, you'll need to have Python and the Flask framework inst
   * **Tailwind CSS:** For front-end styling and responsive design.
   * **Python:** For the back-end logic, including the Monte Carlo algorithm
   * **Flask:** A Python web framework used to serve the web application
+
+# Web App Images
+![Home Page View](images/homepage.png "Home Page")
+![About Page View](images/aboutpage.png "About Page")
