@@ -13,7 +13,8 @@ $$
 # Features
 * Pi estimation: Calculates an estimate for Pi based on a user-defined number of points.
 * Custom Precision: Allows the user to specify the number of decimal places to round the estimated value.
-* Performance Tracking: Displas the total time taken to run the estimation
+* Performance Tracking: Displays the total time taken to run the estimation
+* Themes: Features a light and dark mode them to match your browser setup
 
 
 # Getting Started
